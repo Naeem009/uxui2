@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
     },
     figure: {
-        color: 'red',
+        color: 'green',
         
     }
 }));
