@@ -34,8 +34,8 @@ jobs:
     
     - name: Build React App
       run: yarn build
-      env:
-         CI: false
+      #env:
+         #CI: false
     
     # Runs a set of commands using the runners shell
     - name: Installing Surge
