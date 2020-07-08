@@ -8,6 +8,8 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: 1000,
         margin: '0 auto',
         marginTop: 35,
+        marginLeft: 10,
+        textAlign: 'left',
     },
     paper: {
         padding: theme.spacing(2),
@@ -18,10 +20,15 @@ const useStyles = makeStyles((theme) => ({
         color: 'navy',
         fontStyle: 'italic',
         textTransform: 'uppercase',
+        
     },
     figure: {
         color: 'green',
 
+    },
+    dataspc: {
+        padding: 5,
+        marginLeft: 5,
     }
 }));
 
@@ -34,8 +41,8 @@ export default function AllCountries() {
             const response = await fetch("https://api.thevirustracker.com/free-api?countryTotals=ALL");
             let data = await response.json();
             
-            setglobalData(Object.values(data.countryitems[0]));
-            console.log(data.countryitems[0]["1"]);
+            setglobalData(Object.values(Object.values(data.countryitems[0])));
+            console.log(Object.values(Object.values(data.countryitems[0])));
         }
         getData();
     }, [])
@@ -45,23 +52,33 @@ export default function AllCountries() {
         <div className={classes.root}>
 
             <Grid container spacing={3}>
-                {Object.keys(globalData[0]).map((key, ind) => {
+                <table>
+                    <tr>
+                        <td className={classes.dataspc}>Country Name</td>
+                        <td className={classes.dataspc}>Total Cases</td>
+                        <td className={classes.dataspc}>Total Deaths</td>
+                        <td className={classes.dataspc}>Total Recovered</td>
+                    </tr>
+                {globalData.map((key, ind) => {
                     return (
-                        <Grid item xs={12} sm={4} key={ind}>
-                            <Paper
-                                className={classes.paper}
-                                elevation={3}>
-                                <h3 className={classes.title}>
-                                    {key.replace(/_/g, ' ')}
-                                </h3>
-                                <h3 className={classes.figure}>
-                                    {globalData[0][key]}
-                                </h3>
-                            </Paper>
-                        </Grid>
+                        <tr>
+                            <td className={classes.dataspc}>{globalData[ind].title}</td>
+                            <td className={classes.dataspc}>
+                            {globalData[ind].total_cases}
+                            </td>
+                            <td className={classes.dataspc}>
+                            {globalData[ind].total_deaths}
+                            </td>
+                            <td className={classes.dataspc}>
+                            {globalData[ind].total_recovered}
+                            </td>
+                        </tr>
+                                
+                                
+                       
                     )
                 })}
-
+                    </table>
             </Grid>
         </div>
     );
