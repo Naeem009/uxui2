@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     dataspc: {
         padding: 5,
         marginLeft: 5,
+        fontWeight: 'bold',
     }
 }));
 
