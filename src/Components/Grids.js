@@ -1,6 +1,7 @@
 import React from 'react';
 import GlobalStats from './GlobalStats.js';
 import AllCountries from './AllCountries';
+import Pakistan from './Pakistan';
 
 export default function FullWidthGrid({ currentScreen }) {
     if(currentScreen===0)
@@ -8,5 +9,5 @@ export default function FullWidthGrid({ currentScreen }) {
     else if(currentScreen===1)
         return <AllCountries />
     else
-        return <GlobalStats />
+        return <Pakistan />
 }

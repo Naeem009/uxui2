@@ -6,6 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -78,7 +79,7 @@ export default function NavBar() {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Enter COuntry…"
+              placeholder="Enter Country…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -88,6 +89,7 @@ export default function NavBar() {
           </div>
         </Toolbar>
       </AppBar>
+      
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function FootNav({screenConfig}) {
     >
       <BottomNavigationAction label="Global Status" icon={<RestoreIcon />} />
       <BottomNavigationAction label="Country Status" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Graphs" icon={<LocationOnIcon />} />
+      <BottomNavigationAction label="Pakistan" icon={<LocationOnIcon />} />
     </BottomNavigation>
   );
 }
